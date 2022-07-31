@@ -52,9 +52,11 @@ def vs():  # create the vs game-mode
     p_guess = input("Im thinking of a number between 1 and 100, what am I?\nguess: ")  # guess the target number
     if not p_guess.isdigit():
         print(Colors.RED + "\n" + f"*" * 5 + "Invalid input" + f"*" * 5 + Colors.END)  # dummy proof (:
+        wait(1)
         exit()
     elif int(p_guess) not in range(1, 100):
         print(Colors.RED + "\n" + f"*" * 5 + "Invalid input" + f"*" * 5 + Colors.END)  # dummy proof (:
+        wait(1)
         exit()
     b_guess = rd.choice(range(1, 100))  # choose a random number from 1 to 100
     wait(2)  # wait 2 seconds
@@ -65,10 +67,11 @@ def vs():  # create the vs game-mode
 
         if int(p_guess) == target_num:
             print(Colors.YELLOW + "\n" + f"*" * 5 + f"You won in {p_guesses} tries" + f"*" * 5 + Colors.END)
+            wait(1)
             exit()  # end program
         elif int(b_guess) == target_num:
-            print(
-                Colors.RED + "\n" + f"*" * 5 + f"The bot won in {b_guesses} tries with the number {target_num}" + f"*" * 5 + Colors.END)
+            print(Colors.RED + "\n" + f"*" * 5 + f"The bot won in {b_guesses} tries with the number {target_num}" + f"*" * 5 + Colors.END)
+            wait(1)
             exit()  # end program
         else:
             if int(p_guess) < target_num:  # if under the target
@@ -86,9 +89,11 @@ def vs():  # create the vs game-mode
             p_guess = input(f"Take your next guess\nguess: ")  # guess the target number
             if not p_guess.isdigit():
                 print(Colors.RED + "\n" + f"*" * 5 + "Invalid input" + f"*" * 5 + Colors.END)  # dummy proof (:
+                wait(1)
                 exit()
             elif int(p_guess) not in range(1, 100):
                 print(Colors.RED + "\n" + f"*" * 5 + "Invalid input" + f"*" * 5 + Colors.END)  # dummy proof (:
+                wait(1)
                 exit()
             else:
                 if b_guesses == rd.choice(bwn_guess):
@@ -99,6 +104,7 @@ def vs():  # create the vs game-mode
                     print("Bot just made his next guess.\n")
 
 
+# start
 print(Colors.GREEN + "Let's play one of two games.\n" + Colors.END + Colors.RED +
       "In game one, you test how many guesses\nit takes you until you find the "
       "random\nnumber, between 1 and 100.\n" + Colors.END + Colors.BLUE +
@@ -113,4 +119,5 @@ elif st == "2":
     vs()  # run the game-mode
 else:
     print(Colors.RED + "\n" + f"*" * 5 + "Invalid input" + f"*" * 5 + Colors.END)  # dummy proof (:
+    wait(1)
     exit()
